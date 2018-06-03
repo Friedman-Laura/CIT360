@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JavaCollections;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -14,20 +8,20 @@ import java.util.Set;
 
 /**
  *
- * @author Laura
+ * @author Laura - sandbox code
  */
 
-class Puppies{
+class Students{
     private int age;
     private String name;
     
-    public Puppies(int age, String name){
+    public Students(int age, String name){
         this.age = age;
         this.name = name;
     }
     @Override
     public String toString() {
-        return "(Puppy age is: " + age + "; Puppy is " + name + ")";
+        return "Student age is: " + age + "; Student is " + name;
     }
 // Add hashCode and equals as Comparators if you think there are duplicates
     @Override
@@ -49,57 +43,58 @@ class Puppies{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Puppies other = (Puppies) obj;
+        final Students other = (Students) obj;
         if (this.age != other.age) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.name, other.name);
     }
     
 }
 
 public class CollectionsMap {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        /* Using HashMap does not retain the order in which the map was written
-           Use LinkedHashMap or TreeMap */
-        Puppies pup1 = new Puppies(11, "Sole");
-        Puppies pup2 = new Puppies(1, "Sopo");
-        Puppies pup3 = new Puppies(10, "Sid");
-        Puppies pup4 = new Puppies(2, "Blackie");
-        Puppies pup5 = new Puppies(8, "Coco");
-        Puppies pup6 = new Puppies(9, "Tiger");
-        Puppies pup7 = new Puppies(10, "Sid");
+        /* HashMap DOES NOT retain the order a map was written
+           LinkedHashMap or TreeMap DOES retain the order a map was written
+        */
+        Students student1 = new Students(55, "Laura");
+        Students student2 = new Students(26, "Samantha");
+        Students student3 = new Students(23, "Michael");
+        Students student4 = new Students(21, "McKenna");
+        Students student5 = new Students(45, "Holly");
+        Students student6 = new Students(38, "Richard");
+        Students student7 = new Students(39, "Danyal");
         
-        Map<Puppies, Integer> map = new LinkedHashMap<>();
+        System.out.println("Create LinkedHashSet using the Map method and add the students:");
+        Map<Students, Integer> map = new LinkedHashMap<>();
         // Use put to add to the map
-        map.put(pup1, 1);
-        map.put(pup2, 2);
-        map.put(pup3, 3);
-        map.put(pup4, 4);
-        map.put(pup5, 5);
-        map.put(pup6 ,6);
-        map.put(pup3, 3); // Shows that map keys are not unique and  will not include a duplicate item
+        map.put(student1, 1);
+        map.put(student2, 2);
+        map.put(student3, 3);
+        map.put(student4, 4);
+        map.put(student5, 5);
+        map.put(student6 ,6);
+        map.put(student7 ,7);
+        
+        // Map keys are unique and will not include duplicate items        
+        map.put(student5, 5);
         
         // iterate through the map
-        for(Puppies key: map.keySet()) { 
-            System.out.println(key + ": " + map.get(key));
+        for(Students key: map.keySet()) { 
+            System.out.println("\tKey " + map.get(key) + " - " + key);
         }
-        Set<Puppies> set = new LinkedHashSet<>();
+        
+        System.out.println("\nCreate a second LinkedHashSet using the Set method and add the students:");
+
+        Set<Students> studentset = new LinkedHashSet<>();
+ 
         // Add items to the set
-        set.add(pup1);
-        set.add(pup2);
-        set.add(pup3);
-        set.add(pup4);
-        set.add(pup5);
-        set.add(pup6);
-        System.out.println(set);
-    }
-    
+        studentset.add(student1);
+        studentset.add(student2);
+        studentset.add(student3);
+        studentset.add(student4);
+        studentset.add(student5);
+        studentset.add(student6);
+        System.out.println("\t" + studentset);
+    } 
 }

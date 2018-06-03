@@ -1,37 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JavaCollections;
 
 import java.util.Set;
 import java.util.TreeSet;
+
 /**
  *
- * @author Laura
+ * @author Laura - sandbox code
  */
 
-class Book implements Comparable<Book> {
+class Song implements Comparable<Song> {
 
     int id;
     
-    String name, author, publisher;
+    String title, artist, genre;
     
-    int quantity;
+    int sold, left;
     
-public Book(int id, String name, String author, String publisher, int quantity) {
+public Song(int id, String title, String artist, String genre, int sold, int left) {
     this.id = id;
-    this.name = name;
-    this.author = author;
-    this.publisher = publisher;
-    this.quantity = quantity;
+    this.title = title;
+    this.artist = artist;
+    this.genre = genre;
+    this.sold = sold;
+    this.left = left;
 }
     @Override
-    public int compareTo(Book b) {
-    if(id>b.id){
+    public int compareTo(Song s) {
+    if(id > s.id){
         return 1;
-    } else if(id<b.id) {
+    } else if(id < s.id) {
         return -1;
     } else {
         return 0;
@@ -43,23 +40,29 @@ public class CollectionsTreeSet {
     
     public static void main(String args[]) {
     
-        Set<Book> set = new TreeSet<>();
+        // Create a blank Song TreeSet
+        Set<Song> set = new TreeSet<>();
         
-        // Create books
-        Book b1 = new Book(100, "The Lord of the Rings", "C.S. Lewis", "Good Books", 3);
-        Book b2 = new Book(101, "The Hobbit", "C.S. Lewis", "Good Books", 3);
-        Book b3 = new Book(102, "Harry Potter and the Goblet of Fire", "J.K. Rowling", "Fun Publishers", 5);
-        Book b4 = new Book(103, "Harry Potter and the Order of the Phoenix", "J.K. Rowling", "Fun Publishers", 5);
+        int recordNum = 1001;
         
-        // Add books to TreeSet
-        set.add(b1);
-        set.add(b2);
-        set.add(b3);
-        set.add(b4);
+        // Create songs with a dynamically incremented id number
+        Song s1 = new Song(recordNum, "Born to Run", "Bruce Springsteen", "Classic Rock", 5, 3);
+        Song s2 = new Song(++recordNum, "We Own It", "2 Chainz and Wiz Khalifa", "Rap", 2, 5);
+        Song s3 = new Song(++recordNum, "Danza Kuduro", "Don Omar", "Reggaeton", 10, 8);
+        Song s4 = new Song(++recordNum, "Morocco", "Rippingtons", "Jazz", 7, 9);
+        Song s5 = new Song(++recordNum, "Si No Vuelves", "Gente De Zona", "Salsa", 2, 15);
         
-        // Iterate through the TreeSet
-        for(Book b:set) {
-            System.out.println(b.id + " " + b.name + " " + b.author + " " + b.publisher + " " + b.quantity);
+        // Add songs to TreeSet
+        set.add(s1);
+        set.add(s2);
+        set.add(s3);
+        set.add(s4);
+        set.add(s5);
+        
+        // Iterate through the TreeSet and display each record
+        for(Song s:set) {
+            System.out.println("ID: " + s.id + "\nTitle: " + s.title + "\nArtist: " + s.artist + "\nGenre: " + s.genre + "\nSold: "
+                               + s.sold + "\nLeft: " + s.left + "\n");
         }
     }
 }
