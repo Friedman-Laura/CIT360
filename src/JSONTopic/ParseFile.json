@@ -1,0 +1,19 @@
+{
+    "lName":"Friedman",
+    "fName":"Laura"
+    "address":{
+        "street":"PO Box 93624",
+        "city":"Southlake",
+        "state":"TX",
+        "zip":76092
+    },
+     "age":55,
+     "phoneNumbers":[
+            {
+            "type":"mobile", "number":"817-913-5050"
+            },
+         {
+            "type":"home", "number":"972-473-7549"
+         }
+     ],
+}
