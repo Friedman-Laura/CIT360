@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class ACPController {
 	
         // Create a HashMap to link the string to the doMath interface
-	public static HashMap<String, HandleOperation> hashMapOfOperation = new HashMap<String, HandleOperation>();
+	public static HashMap<String, MathOperation> hashMapOfOperation = new HashMap<String, MathOperation>();
 
 	public  ACPController() {
 
@@ -26,8 +26,8 @@ public class ACPController {
             hashMapOfOperation.put("*", new ACPMultiply());
             hashMapOfOperation.put("/", new ACPDivide());
 			
-            // Create an instance of the HandleOperation class based on the operation passed
-            HandleOperation doMath = hashMapOfOperation.get(operation);
+            // Create an instance of the MathOperation class based on the operation passed
+            MathOperation doMath = hashMapOfOperation.get(operation);
 	
             // Execute the code to complete the simple math calculation and return the results to the main application
             return(doMath.operate(firstNum, secondNum));	

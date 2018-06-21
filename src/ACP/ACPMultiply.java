@@ -6,9 +6,9 @@ package ACP;
  */
 
 /*
-    This carries out the multiplication implementation of HandleOperation
+    This carries out the multiplication implementation of MathOperation
 */
-public class ACPMultiply implements HandleOperation {
+public class ACPMultiply implements MathOperation {
 
     public Integer operate(Integer firstNum, Integer secondNum) {
 	Integer multiply = firstNum * secondNum;

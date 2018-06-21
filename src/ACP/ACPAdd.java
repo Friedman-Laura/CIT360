@@ -6,9 +6,9 @@ package ACP;
  */
 
 /*
-    This carries out the addition implementation of HandleOperation
+    This carries out the addition implementation of MathOperation
 */
-public class ACPAdd implements HandleOperation{
+public class ACPAdd implements MathOperation{
 
     public Integer operate(Integer firstNum, Integer secondNum) {
 	Integer addTotal = firstNum + secondNum;

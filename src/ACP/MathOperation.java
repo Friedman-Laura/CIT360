@@ -8,7 +8,7 @@ package ACP;
 /*
     This is a shell function that is used in the implementations
 */
-public interface HandleOperation {
+public interface MathOperation {
 	
     Integer operate(Integer firstNum, Integer secondNum);
 }
