@@ -21,8 +21,6 @@ import static org.junit.Assert.*;
     @AfterClass will run after all @Test conditions are complete.
 */
 public class LoanTest {
-
-    private double delta = .005;
     
     @BeforeClass
     public static void setUpBefore() {
