@@ -20,7 +20,7 @@ public class ParseJSONFile {
 
     public static void main(String[] args) throws Exception {
         // parsing file "JSONExample.json"
-        Object obj = new JSONParser().parse(new FileReader("C:\\Users\\Laura\\Dropbox\\College\\BYU Idaho\\2018-04-Spring\\CIT360-ObjOrientedProg2\\CIT360\\src\\QCJSONandJSON\\ParseFile.json"));
+        Object obj = new JSONParser().parse(new FileReader("C:\\Users\\Laura\\Dropbox\\College\\BYU Idaho\\2018-04-Spring\\CIT360-ObjOrientedProg2\\CIT360\\src\\JSONTopic\\ParseFile.json"));
 
         // typecasting obj to JSONObject
         JSONObject jObject = (JSONObject) obj;

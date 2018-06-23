@@ -72,7 +72,7 @@ public class SongJSON {
         System.out.println("Here is the information that will be written to the JSON file:\n\t" + artistObject.toJSONString() + "\n");
 
         // Create and write to file
-        File file = new File("C:\\Users\\Laura\\Dropbox\\College\\BYU Idaho\\2018-04-Spring\\CIT360-ObjOrientedProg2\\CIT360\\src\\QCJSONandJSON\\artistFile.json");
+        File file = new File("C:\\Users\\Laura\\Dropbox\\College\\BYU Idaho\\2018-04-Spring\\CIT360-ObjOrientedProg2\\CIT360\\src\\JSONTopic\\artistFile.json");
 
         try (PrintWriter writeFile = new PrintWriter(file)) {
             writeFile.print(artistObject.toJSONString());
